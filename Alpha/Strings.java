@@ -13,8 +13,8 @@ public class Strings {
         }
         return true;
     }
-    public static void main(String[] args){
-        String s="WNEENESENNN";
+    public static void shortestDistance(String s){
+         String s="WNEENESENNN";
         int x=0,y=0;
         for(int i=0;i<s.length();i++){
             char ch=s.charAt(i);
@@ -33,5 +33,8 @@ public class Strings {
         }
         double dist=Math.sqrt((Math.pow(x,2))+(Math.pow(y,2)));
         System.out.println(dist);
+    }
+    public static void main(String[] args){
+       
     }
 }
