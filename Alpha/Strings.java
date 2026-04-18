@@ -13,8 +13,8 @@ public class Strings {
         }
         return true;
     }
-    public static void shortestDistance(String s){
-         String s="WNEENESENNN";
+    static void shortestDistance(String s){
+         
         int x=0,y=0;
         for(int i=0;i<s.length();i++){
             char ch=s.charAt(i);
@@ -34,7 +34,15 @@ public class Strings {
         double dist=Math.sqrt((Math.pow(x,2))+(Math.pow(y,2)));
         System.out.println(dist);
     }
+    static String subString(String s,int si,int ei){
+    String res="";
+    for(int i=si;i<ei;i++){
+        res+=s.charAt(i);
+    }
+    return res;
+   }
     public static void main(String[] args){
-       
+       String str="Hello World";
+       System.out.println(str.substring(0,5));
     }
 }
