@@ -42,12 +42,12 @@ public class Strings {
     return res;
    }
     public static void main(String[] args){
-       String s="hello,i am nandan";
+       String s="hello world i am nandan";
        StringBuilder res=new StringBuilder("");
      //    System.out.println(Character.toUpperCase(s.charAt(0)));
           res.append(Character.toUpperCase(s.charAt(0)));
           for(int i=1;i<s.length();i++){
-            if(s.charAt(i-1)==' ' || s.charAt(i-1)==','){
+            if(s.charAt(i-1)==' '){
                 res.append(Character.toUpperCase(s.charAt(i)));
                 continue;
                 
