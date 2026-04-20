@@ -54,9 +54,9 @@ public class Strings {
             res.append(s.charAt(i));
           }
           System.out.println(res);
-    } 
-   public static void main(String[] args){
-    String s="abbbcc";
+    }
+    static void stringCompression(){
+        String s="abbbcc";
     StringBuilder res=new StringBuilder("");
     // res.append(s.charAt(0));
     int count=1;
@@ -80,5 +80,8 @@ public class Strings {
         }
     }
     System.out.println(res);
+    }
+   public static void main(String[] args){
+    
    }
 }
