@@ -56,25 +56,27 @@ public class Strings {
           System.out.println(res);
     } 
    public static void main(String[] args){
-    String s="aaaaafffvvbcc";
+    String s="abbbcc";
     StringBuilder res=new StringBuilder("");
-    int j=0;
-    res.append(s.charAt(0));
-    int count=0;
-    for(int i=0;i<s.length();i++){
-        if(s.charAt(i)==s.charAt(j)){
+    // res.append(s.charAt(0));
+    int count=1;
+    for(int i=1;i<s.length();i++){
+        if(s.charAt(i)==s.charAt(i-1)){
             count++;
         }
         else{
+            res.append(s.charAt(i-1));
             if(count>1){
                 res.append(count);
             }
-            res.append(s.charAt(i));
             count=1;
-            j=i;
+            
         }
-        if(i==s.length()-1 && count>1){
-            res.append(count);
+        if(i==s.length()-1){
+            res.append(s.charAt(i));
+            if(count>1){
+                res.append(count);
+            }
         }
     }
     System.out.println(res);
