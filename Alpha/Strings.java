@@ -41,10 +41,9 @@ public class Strings {
     }
     return res;
    }
-    public static void main(String[] args){
-       String s="hello world i am nandan";
+    static void capitalize(){
+        String s="hello world i am nandan";
        StringBuilder res=new StringBuilder("");
-     //    System.out.println(Character.toUpperCase(s.charAt(0)));
           res.append(Character.toUpperCase(s.charAt(0)));
           for(int i=1;i<s.length();i++){
             if(s.charAt(i-1)==' '){
@@ -55,6 +54,29 @@ public class Strings {
             res.append(s.charAt(i));
           }
           System.out.println(res);
-    
+    } 
+   public static void main(String[] args){
+    String s="abcc";
+    StringBuilder res=new StringBuilder("");
+    int j=0;
+    res.append(s.charAt(0));
+    int count=0;
+    for(int i=0;i<s.length();i++){
+        if(s.charAt(i)==s.charAt(j)){
+            count++;
+        }
+        else{
+            if(count>1){
+                res.append(count);
+            }
+            res.append(s.charAt(i));
+            count=1;
+            j=i;
+        }
+        if(i==s.length()-1 && count>1){
+            res.append(count);
+        }
     }
+    System.out.println(res);
+   }
 }
