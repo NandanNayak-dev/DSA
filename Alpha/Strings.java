@@ -56,7 +56,7 @@ public class Strings {
           System.out.println(res);
     } 
    public static void main(String[] args){
-    String s="abcc";
+    String s="aaaaafffvvbcc";
     StringBuilder res=new StringBuilder("");
     int j=0;
     res.append(s.charAt(0));
