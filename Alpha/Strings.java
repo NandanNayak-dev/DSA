@@ -1,5 +1,16 @@
 import java.util.*;
 public class Strings {
+    static void LowerCaseCount(){
+        int count=0;
+    String s="";
+    for(int i=0;i<s.length();i++){
+        char ch=s.charAt(i);
+        if(Character.toLowerCase(ch)==ch){
+            count++;
+        }
+    }
+    System.out.println(count);
+    }
     public static boolean isPalindrome(String s){
         s=s.toLowerCase();
         int l=0;
@@ -57,7 +68,7 @@ public class Strings {
     }
     static void stringCompression(){
         String s="abbbcc";
-    StringBuilder res=new StringBuilder("");
+        StringBuilder res=new StringBuilder("");
     // res.append(s.charAt(0));
     int count=1;
     for(int i=1;i<s.length();i++){
@@ -82,6 +93,6 @@ public class Strings {
     System.out.println(res);
     }
    public static void main(String[] args){
-    
-   }
+   
+    }
 }
