@@ -77,9 +77,28 @@ public class Array{
         }
         System.out.println(list);
     }
+    static void Intersection2SortedArrays(){
+        int a[]={1,2,2,3,3,4,5,6,7,8};
+        int b[]={2,3,3,5,6,6,7};
+        ArrayList<Integer> list=new ArrayList<>();
+        int i=0;
+        int j=0;
+        while(i<a.length && j<b.length){
+            if(a[i]==b[j]){
+                list.add(a[i]);
+                i++;
+                j++;
+            }
+            else if(a[i]<b[j]){
+                i++;
+            }
+            else{
+                j++;
+            }
+        }
+        System.out.println(list);
+    }
     public static void main(String[] args) {
-        //Union of two sorted Arrays
         
-
     }
 }
