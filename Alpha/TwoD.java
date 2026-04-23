@@ -115,7 +115,7 @@ public class TwoD {
             {27,29,37,48},
             {32,33,39,50}
         };
-        System.out.println(search(arr, 34));
+        System.out.println(spiral(arr););
 
     }
 }
