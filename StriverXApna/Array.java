@@ -42,8 +42,7 @@ public class Array{
         rotateArray(arr, k, arr.length-1);
         System.out.println(Arrays.toString(arr));
     }
-    public static void main(String[] args) {
-        //Union of two sorted Arrays
+    static void UnionOf2SortedArrays(){
         ArrayList<Integer> list=new ArrayList<>();
         int arr1[]={1,2,4,6,7,8,9,10};
         int arr2[]={1,3,4,5,7,8,11};
@@ -77,6 +76,10 @@ public class Array{
             i++;
         }
         System.out.println(list);
+    }
+    public static void main(String[] args) {
+        //Union of two sorted Arrays
+        
 
     }
 }
