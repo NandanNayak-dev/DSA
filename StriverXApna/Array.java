@@ -98,6 +98,30 @@ public class Array{
         }
         System.out.println(list);
     }
+    static void sort012(){
+        int[] arr={0,1,1,0,1,2,1,2,0,0,0,2,2,0,1};
+        int mid=0,low=0,high=arr.length-1;
+        int temp;
+        while(mid<=high){
+            if(arr[mid]==0){
+                temp=arr[low];
+                arr[low]=arr[mid];
+                arr[mid]=temp;
+                mid++;
+                low++;
+            }
+            else if(arr[mid]==1){
+                mid++;
+            }
+            else{
+               temp=arr[high];
+                arr[high]=arr[mid];
+                arr[mid]=temp;
+                high--; 
+            }
+        }
+        System.out.println(Arrays.toString(arr));
+    }
     public static void main(String[] args) {
         
     }
