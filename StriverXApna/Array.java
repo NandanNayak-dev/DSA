@@ -122,6 +122,20 @@ public class Array{
         }
         System.out.println(Arrays.toString(arr));
     }
+    static void twoSum(){
+    int arr[]={2,7,4,8,7,8};
+        HashMap<Integer,Integer> map=new HashMap<>();
+        int target=12;
+        for(int i=0;i<arr.length;i++){
+            if(map.containsKey(target-arr[i])){
+                System.out.println(i+" "+map.get(target-arr[i]));
+                break;
+            }
+            else{
+                map.put(arr[i], i);
+            }
+        }
+    }
     public static void main(String[] args) {
         
     }
