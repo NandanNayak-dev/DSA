@@ -1,5 +1,24 @@
 import java.util.*;
 public class Array{
+    static void mostfrequentElement(){
+        int arr[]={1,2,3,2,1,2,3,2,1,1,1,1,0,0,0,0,0,4,4,4,5};
+        int maxi=arr[0];
+        int max=Integer.MIN_VALUE;
+        HashMap<Integer,Integer> map=new HashMap<>();
+        for(int element:arr){
+            if(!map.containsKey(element)){
+                map.put(element, 1);
+            }
+            else{
+                map.put(element,map.get(element)+1);
+            }
+            if(map.get(element)>max){
+                max=map.get(element);
+                maxi=element;
+            }
+        }
+        System.out.println(map);
+    }
     static void rotateArray(int arr[],int l,int r){
         while(l<r){
             int temp=arr[l];
@@ -137,6 +156,7 @@ public class Array{
         }
     }
     public static void main(String[] args) {
+        
         
     }
 }
