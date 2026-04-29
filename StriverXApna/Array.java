@@ -155,8 +155,95 @@ public class Array{
             }
         }
     }
+    static void majority(){
+        int arr[]={7,7,5,7,5,1,1,7,7};
+        int el=arr[0];
+        int count=0;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]==el){
+                count++;
+            }
+            else{
+                count--;
+            }
+
+            if(count==0&& i<arr.length-1){
+                el=arr[i+1];
+                count=0;
+            }
+        }
+        count=0;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]==el){
+                count++;
+            }
+            
+        }
+        if(count>arr.length/2){
+            System.out.println("Majority "+el);
+        }
+        else{
+            System.out.println("No majority");
+        }
+    }
+    static void EqualNegAndPosRearrange(){
+        int arr[]={-1, -2, -3, 4, -4, 5, 6, 7};
+        int res[]=new int[arr.length];
+        int j=0;
+        int k=1;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>=0){
+                res[j]=arr[i];
+                j+=2;
+            }
+            else{
+                res[k]=arr[i];
+                k+=2;
+            }
+        }
+        System.out.println(Arrays.toString(res));
+    }
+    static void UnequalNegAndPosRearrange(){
+        int arr[]={1,2,-4,-5,3,6,6,7,8};
+        ArrayList<Integer> posList=new ArrayList<>();
+        ArrayList<Integer> negList=new ArrayList<>();
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>=0){
+                posList.add(arr[i]);
+            }
+            else{
+                negList.add(arr[i]);
+            }
+        }
+        System.out.println(posList);
+        System.out.println(negList);
+        int length=(negList.size()<posList.size())?negList.size():posList.size();
+        int j=0;
+        int k=0;
+        int i=0;
+        for(i=0;i<2*length;i++){
+            if(i%2==0){
+                arr[i]=posList.get(j);
+                j++;
+            }
+            else{
+                arr[i]=negList.get(k);
+                k++;
+            }
+        }
+        while(j!=posList.size()){
+            arr[i]=posList.get(j);
+            j++;
+            i++;
+        }
+        while(k!=negList.size()){
+            arr[i]=negList.get(k);
+            k++;
+            i++;
+        }
+        System.out.println(Arrays.toString(arr));
+    }
     public static void main(String[] args) {
-        
         
     }
 }
