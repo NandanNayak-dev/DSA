@@ -243,6 +243,29 @@ public class Array{
         }
         System.out.println(Arrays.toString(arr));
     }
+    static void SubArrayWithSumK(){  
+        HashMap<Integer,Integer> map=new HashMap<>();
+        int arr[]={1,2,0,1,1,-2,2};
+        int sum=0;
+        int length=0;
+        int maxLength=0;
+        int k=3;
+        for(int i=0;i<arr.length;i++){
+           sum+=arr[i]; 
+           if(sum==k){
+            length=i+1;
+            maxLength=Math.max(maxLength, length);
+           }
+           else if(map.containsKey(sum-k)){
+            length=i-map.get(sum-k);
+            maxLength=Math.max(maxLength, length);
+           }
+           else{
+            map.put(sum, i);
+           }
+        }
+        System.out.println(maxLength);
+    }
     public static void main(String[] args) {
         
     }
