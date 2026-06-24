@@ -294,7 +294,7 @@ public class Array {
         }
     }
 
-    public static void main(String[] args) {
+    static void nextPermutation(){
         int arr[] = { 1, 2, 4, 6, 4, 3 };
         int index = -1;
         for (int i = arr.length - 2; i >= 0; i--) {
@@ -302,6 +302,9 @@ public class Array {
                 index = i;
                 break;
             }
+        }
+        if(index==-1){
+            return;
         }
         for (int i = arr.length - 1; i >= index; i--) {
             if (arr[i] > arr[index]) {
@@ -314,4 +317,45 @@ public class Array {
         reverse(arr, index + 1, arr.length - 1);
         System.out.println(Arrays.toString(arr));
     }
-}
+
+    static void kadanesVariant(int arr[]){
+        int curSum=0;
+        int maxSum=Integer.MIN_VALUE;
+        int flag=0;
+        int startIndex=-1,endIndex=-1;
+            int start=-1;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>0){
+                flag=1;
+                break;
+            }
+            else{
+                if(arr[i]>maxSum){
+                    maxSum=arr[i];
+                }
+                continue;
+            }
+        }
+        if(flag==1){
+            for(int i=0;i<arr.length;i++){
+            curSum+=arr[i];
+            if(curSum<0){
+                curSum=0;
+                start=i;
+            }
+            
+            if(curSum>maxSum){
+                endIndex=i;
+                startIndex=start;
+                maxSum=curSum;
+            }
+        }
+        }
+        for(int i=startIndex+1;i<=endIndex;i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
+
+    public static void main(String[] args) {
+        
+    }
